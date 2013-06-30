@@ -1,0 +1,23 @@
+#!/bin/bash
+TIMESTAMP=`date +%F_%H%M`
+
+# Install directory
+# Script generates below directories:
+#  $INSTALL_DIR/development
+#  $INSTALL_DIR/production
+#  $INSTALL_DIR/backups
+INSTALL_DIR=/var/www/login
+
+# Allow all client from this IP to register a project anytime.
+JITSUI_IP='X.X.X.X' 
+
+# Virtual current time for function 'inPeriod'(bootstrap.php)
+DEBUG_TODAY='2013/08/01 20:01:00 JST'
+
+# DB access information
+DB_USER=db_user
+DB_PASSWORD=forbar
+DB_DEVELOPMENT=db_for_development
+DB_PRODUCTION=db_for_production
+DB_TEST=db_for_test
+
