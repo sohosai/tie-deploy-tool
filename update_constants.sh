@@ -9,8 +9,6 @@ cat > $TMPFILE <<EOT
   define('JITSUI_IP', '${JITSUI_IP}');
   define('DB_USER', '${DB_USER}');
   define('DB_PASSWORD', '${DB_PASSWORD}');
-  define('DB_DEVELOPMENT', '${DB_DEVELOPMENT}');
-  define('DB_PRODUCTION', '${DB_PRODUCTION}');
   define('DB_TEST', '${DB_TEST}');
 EOT
 
@@ -22,8 +20,10 @@ cp $TMPFILE $file_production
 rm $TMPFILE
 
 echo "  define('TIE_RUN_MODE', 'development');"   >> $file_development
+echo "  define('DB_NAME', '${DB_DEVELOPMENT}');"  >> $file_development
 echo "  define('DEBUG_TODAY', '${DEBUG_TODAY}');" >> $file_development
 echo "  define('TIE_RUN_MODE', 'production');" >> $file_production
+echo "  define('DB_NAME', '${DB_PRODUCTION}');"  >> $file_production
 
 chmod 666 $file_development
 chmod 666 $file_production
